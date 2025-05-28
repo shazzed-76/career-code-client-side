@@ -1,10 +1,13 @@
 import React from 'react';
+import BannerSec from './BannerSec/BannerSec';
 
 const HomePage = () => {
     return (
-        <div>
-            
-        </div>
+      <>
+        <section>
+          <BannerSec />
+        </section>
+      </>
     );
 };
 

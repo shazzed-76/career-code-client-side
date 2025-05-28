@@ -17,14 +17,14 @@ const Links = () => {
           <NavLink to="/application/my">My Application</NavLink>
         </li>
         {user ? (
-          <button className="block md:hidden">Log out</button>
+          <button className="block lg:hidden">Log out</button>
         ) : (
           <>
             <li>
-              <NavLink to="auth/register" className="block md:hidden">Register</NavLink>
+              <NavLink to="auth/register" className="block lg:hidden">Register</NavLink>
             </li>
             <li>
-              <NavLink to="auth/sign-in" className="block md:hidden">Sign in</NavLink>
+              <NavLink to="auth/sign-in" className="block lg:hidden">Sign in</NavLink>
             </li>
           </>
         )}

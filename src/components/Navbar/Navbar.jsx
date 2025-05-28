@@ -53,14 +53,14 @@ const Navbar = () => {
           {user ? (
             <>
               <UserProfile />
-              <button>Log out</button>
+              <button className='hidden lg:block'>Log out</button>
             </>
           ) : (
             <>
-              <button className="btn underline text-sm border-none bg-transparent font-semibold shadow-none">
+              <button className="btn underline text-sm border-none bg-transparent font-semibold shadow-none hidden lg:block">
                 Register
               </button>
-              <button className="btn btn-secondary text-sm">
+              <button className="btn btn-primary text-sm hidden lg:block">
                 Sign in
               </button>
             </>
