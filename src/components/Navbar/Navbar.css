@@ -1,0 +1,10 @@
+ul a {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+.active {
+    background-color: #3c65f5;
+    color: #fff;
+}
