@@ -19,16 +19,23 @@ const Registration = () => {
         const form = e.target;
         const formData = new FormData(form);
         const {email, password, userName, photoUrl} = Object.fromEntries(formData.entries());
-       
+        setErrorMessage('')
         //validate the user password
         if(password.length < 6) {
-            return
+            return setErrorMessage('Password must be at least 6 characters long.')
+        }
+        else if(!/[A-Z]/.test(password)){
+            return setErrorMessage('Passwornd must contain at least one uppercase.')
+        }
+        else if(!/[a-z]/.test(password)){
+            return setErrorMessage('Password must contain at least one lowercase.')
         }
 
         //create account in firebase
         createUser(email, password)
         .then(result => {
             const newUser = result.user;
+            setErrorMessage('')
             if(newUser){
                 //updated the user profile
                 updateUserInfo({ displayName: userName, photoURL: photoUrl })
@@ -108,12 +115,15 @@ const Registration = () => {
                     className="text-sm font-semibold btn btn-xs bg-transparent border-0 absolute top-2 right-5 z-50"
                     onClick={() => setShow((prev) => !prev)}
                   >
-                    {show ? <VscEye size={15}/> : <VscEyeClosed size={15}/>}
+                    {show ? <VscEye size={15} /> : <VscEyeClosed size={15} />}
                   </span>
                 </div>
+                {errorMessage && (
+                  <p className="text-red-500 text-sm font-normal">{errorMessage}</p>
+                )}
                 <button className="btn btn-primary mt-4">Register</button>
               </form>
-              <SocialLogInBtn content='Sign up with Google'/>
+              <SocialLogInBtn content="Sign up with Google" />
             </div>
           </div>
         </div>
