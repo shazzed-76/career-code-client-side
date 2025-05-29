@@ -6,6 +6,8 @@ import JobDetailsPage from '../pages/JobDetailsPage/JobDetailsPage';
 import ApplicationPage from '../pages/ApplicationPage/ApplicationPage';
 import MyApplicationPage from '../pages/MyApplicationPage/MyApplicationPage';
 import HomePage from '../pages/HomePage/HomePage';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import Registration from '../pages/Registration/Registration';
 
 const router = createBrowserRouter([
     {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
                 element: <MyApplicationPage />
             }
         ]
+    },
+    {
+        path: 'login',
+        element: <LoginPage />
+    },
+    {
+        path: 'register',
+        element: <Registration />
     }
 ])
 

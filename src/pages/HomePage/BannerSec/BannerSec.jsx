@@ -3,7 +3,7 @@ import bannerImage from '../../../assets/image/illustration/banner-img.svg'
 
 const BannerSec = () => {
     return (
-      <div className="hero bg-base-200 py-20 px-5">
+      <div className="hero bg-base-200 py-10 px-5">
         <div className="hero-content flex-col lg:flex-row-reverse justify-between gap-10">
           <div className="flex-1 place-items-end">
             <img className="w-full max-w-lg" src={bannerImage} />

@@ -40,7 +40,7 @@ const Navbar = () => {
           <a className="flex gap-1 items-center">
             <img className="max-w-[40px]" src={logo} alt="company image" />
             <h1 className="text-2xl md:text-3xl font-bold mb-2">
-              career<span className="text-secondary">Code</span>
+              career<span className="text-primary">Code</span>
             </h1>
           </a>
         </div>
@@ -49,11 +49,11 @@ const Navbar = () => {
             <Links />
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end space-x-5">
           {user ? (
             <>
-              <UserProfile />
-              <button className='hidden lg:block'>Log out</button>
+              <UserProfile user={user} />
+              <button className='hidden lg:block btn btn-primary'>Log out</button>
             </>
           ) : (
             <>
