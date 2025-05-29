@@ -4,11 +4,26 @@ import logo from '../../assets/image/logo.png'
 import Links from '../Links';
 import UserProfile from '../UserProfile/UserProfile';
 import useAuth from '../../Hooks/useAuth';
+import { alertMessage } from '../../Utills/alertMessage';
+import { useNavigate } from 'react-router';
+
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, setUser, logOutUser } = useAuth();
+  const navigate = useNavigate();
 
+    const handleLogOut = () => {
+      console.log(user)
+      logOutUser()
+        .then(() => {
+          setUser(null)
+          alertMessage("logged out successfully.")
+        })
+        .catch((error) => {
+          console.log(error);
 
+        });
+    }
     return (
       <div className="navbar bg-base-100 px-5 md:px-30 py-5">
         <div className="navbar-start">
@@ -53,14 +68,25 @@ const Navbar = () => {
           {user ? (
             <>
               <UserProfile user={user} />
-              <button className='hidden lg:block btn btn-primary'>Log out</button>
+              <button
+               onClick={handleLogOut}
+               className="hidden lg:block btn btn-primary"
+              >
+                Log out
+              </button>
             </>
           ) : (
             <>
-              <button className="btn underline text-sm border-none bg-transparent font-semibold shadow-none hidden lg:block">
+              <button
+               onClick={() => navigate('/register')}
+               className="btn underline text-sm border-none bg-transparent font-semibold shadow-none hidden lg:block"
+              >
                 Register
               </button>
-              <button className="btn btn-primary text-sm hidden lg:block">
+              <button
+               onClick={() => navigate('/login')}
+               className="btn btn-primary text-sm hidden lg:block"
+              >
                 Sign in
               </button>
             </>
