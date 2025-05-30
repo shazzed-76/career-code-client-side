@@ -4,11 +4,11 @@ import { HiBadgeCheck } from 'react-icons/hi';
 import { IoBagCheckOutline, IoLocationOutline } from 'react-icons/io5';
 import { LiaIndustrySolid } from 'react-icons/lia';
 import { TbPointFilled } from 'react-icons/tb';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 
 const JobDetailsPage = () => {
     const job = useLoaderData();
-    console.log(job)
+    const navigate = useNavigate();
     return (
       <div className="max-w-7xl mx-auto px-5 lg:px-0 py-20">
         <h1 className="text-3xl font-bold text-secondary py-2">
@@ -78,7 +78,7 @@ const JobDetailsPage = () => {
                 <TbPointFilled />
                 requirements
               </h2>
-              <p className="text-lg font-semibold pl-7">
+              <div className="text-lg font-semibold pl-7">
                <ul className='list-disc list-inside'>
                  {
                     job?.requirements.map((skill, index) => (
@@ -86,13 +86,16 @@ const JobDetailsPage = () => {
                     ))
                  }
                </ul>
-              </p>
+              </div>
             </li>
         </ul>
             <div className='divider'></div>
         <div className='flex justify-between itmes-center'>
             <button className='btn btn-outline btn-primary capitalize'>go back</button>
-            <button className='btn btn-primary capitalize'>apply</button>
+            <button
+             onClick={() => navigate(`/application/apply/${job?._id}`, {state: job})}
+             className='btn btn-primary capitalize'
+            >apply</button>
         </div>
       </div>
     );
