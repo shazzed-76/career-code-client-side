@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const SingleJobCard = ({ job }) => {
     return (
-      <Link to={``} className="card bg-base-100 shadow-sm p-2">
+      <Link to={`/jobs/details/${job._id}`} className="card bg-base-100 shadow-sm p-2">
         <div className="flex gap-2 items-center">
           <div className="w-20 h-20 flex justify-center item-center p-1">
             <img
@@ -16,7 +16,7 @@ const SingleJobCard = ({ job }) => {
             {job?.company_name}
           </h3>
         </div>
-        <div className="card-body text-left gap-10 p-2">
+        <div className="card-body text-left justify-between p-2 mt-5">
           <h2 className="card-title">
             {job?.job_title}
             <div className="badge badge-secondary">{job?.job_type}</div>
