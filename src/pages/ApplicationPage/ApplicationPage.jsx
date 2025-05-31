@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import { alertMessage } from '../../Utills/alertMessage';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import axios from 'axios';
 const ApplicationPage = () => {
     const { user } = useAuth();
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const handleApplyForm = e => {
         e.preventDefault();
@@ -28,7 +29,7 @@ const ApplicationPage = () => {
            if(response.data){
              alertMessage('Your application submitted successfully')
            }
-           
+           navigate("/application/my");
           })
           .catch((error) => {
             console.log(error);
