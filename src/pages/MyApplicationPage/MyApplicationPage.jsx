@@ -1,8 +1,8 @@
 import React, { Suspense, use } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import MyApplicationRaw from '../../components/MyApplicationRaw/MyApplicationRaw';
-import { myApplicationPromise } from '../../components/apis/myApplicationPromise';
 import MyApplicationList from '../../components/MyApplicationList/MyApplicationList';
+import { myApplicationPromise } from '../../components/apis/myApplicationApi';
 
 const MyApplicationPage = () => {
     const { user } = useAuth();

@@ -8,6 +8,7 @@ import HomePage from "../pages/HomePage/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoute from "../pages/Registration/PrivateRoute/PrivateRoute";
+import { Suspense } from "react";
 
 const router = createBrowserRouter([
   {
