@@ -1,7 +1,8 @@
 import React, { use } from 'react';
+import WithdrawBtn from '../WithdrawBtn/WithdrawBtn';
 
 const MyApplicationRaw = ({ application, index }) => {
-    console.log(application)
+    
   return (
     <tr>
       <td>{index + 1}</td>
@@ -10,7 +11,7 @@ const MyApplicationRaw = ({ application, index }) => {
       <td>{application?.company_name}</td>
       <td>{application?.location}</td>
       <td>
-        <button className="btn btn-xs capitalize">withdraw</button>
+        <WithdrawBtn id={application._id}/>
       </td>
     </tr>
   );
