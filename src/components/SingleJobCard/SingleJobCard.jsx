@@ -16,15 +16,15 @@ const SingleJobCard = ({ job }) => {
             />
           </div>
           <h3 className="text-2xl font-bold text-secondary text-left">
-            {job?.company_name}
+            {job?.company}
           </h3>
         </div>
         <div className="card-body text-left justify-between p-2 mt-5">
           <h2 className="card-title">
-            <span className='w-3/5'>{job?.job_title}</span>
-            <div className="badge badge-secondary ">{job?.job_type}</div>
+            <span className='w-3/5'>{job?.title}</span>
+            <div className="badge badge-secondary ">{job?.jobType}</div>
           </h2>
-          <p>{job?.job_description}</p>
+          <p>{job?.description}</p>
           <div className="card-actions justify-start">
             {job?.requirements.map((skill, index) => (
               <div key={index} className="badge badge-outline">

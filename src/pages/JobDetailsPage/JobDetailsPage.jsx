@@ -12,7 +12,7 @@ const JobDetailsPage = () => {
     return (
       <div className="max-w-7xl mx-auto px-5 lg:px-0 py-20">
         <h1 className="text-3xl font-bold text-secondary py-2">
-          {job?.job_title}
+          {job?.title}
         </h1>
         <p className="flex gap-1 items-center text-sm text-gray-500">
           <IoLocationOutline /> {job?.location}
@@ -27,14 +27,18 @@ const JobDetailsPage = () => {
               <LiaIndustrySolid />
               <p className="capitalize ">
                 company{" "}
-                <span className="text-secondary">{job?.company_name}</span>
+                <span className="text-secondary">{job?.company}</span>
               </p>
             </div>
             <div className="flex items-center gap-3">
               <BsCoin />
               <p className="capitalize ">
                 salary{" "}
-                <span className="text-secondary">{job?.salary_range}</span>
+                <span className="text-secondary">
+                  {job?.salaryRange?.min}-{job?.salaryRange?.max}
+                  {" "}
+                  {job?.salaryRange?.currency}
+                  </span>
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -47,7 +51,7 @@ const JobDetailsPage = () => {
             <div className="flex items-center gap-3">
               <IoBagCheckOutline />
               <p className="capitalize ">
-                job type <span className="text-secondary">{job?.job_type}</span>
+                job type <span className="text-secondary">{job?.jobType}</span>
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -71,7 +75,7 @@ const JobDetailsPage = () => {
                 <TbPointFilled />
                 Job description
               </h2>
-              <p className="text-lg font-semibold pl-7">{job?.job_description}</p>
+              <p className="text-lg font-semibold pl-7">{job?.description}</p>
             </li>
             <li className="text-accent text-left">
               <h2 className="text-2xl font-bold pb-3 flex gap-2 items-center capitalize">
