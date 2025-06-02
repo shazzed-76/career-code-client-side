@@ -1,0 +1,8 @@
+ form, fieldset, input, select, textarea {
+    width: 100%;
+}
+
+form legend, label, select {
+    font-size: 1rem;
+    font-weight: 600;
+}

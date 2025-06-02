@@ -49,7 +49,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <Links />
+              <Links handleLogOut={handleLogOut} />
             </ul>
           </div>
           <a className="flex gap-1 items-center">
@@ -61,7 +61,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <Links />
+            <Links handleLogOut={handleLogOut} />
           </ul>
         </div>
         <div className="navbar-end space-x-5">
@@ -69,8 +69,8 @@ const Navbar = () => {
             <>
               <UserProfile user={user} />
               <button
-               onClick={handleLogOut}
-               className="hidden lg:block btn btn-primary"
+                onClick={handleLogOut}
+                className="hidden lg:block btn btn-primary"
               >
                 Log out
               </button>
@@ -78,14 +78,14 @@ const Navbar = () => {
           ) : (
             <>
               <button
-               onClick={() => navigate('/register')}
-               className="btn underline text-sm border-none bg-transparent font-semibold shadow-none hidden lg:block"
+                onClick={() => navigate("/register")}
+                className="btn underline text-sm border-none bg-transparent font-semibold shadow-none hidden lg:block"
               >
                 Register
               </button>
               <button
-               onClick={() => navigate('/login')}
-               className="btn btn-primary text-sm hidden lg:block"
+                onClick={() => navigate("/login")}
+                className="btn btn-primary text-sm hidden lg:block"
               >
                 Sign in
               </button>

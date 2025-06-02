@@ -8,7 +8,7 @@ import HomePage from "../pages/HomePage/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoute from "../pages/Registration/PrivateRoute/PrivateRoute";
-import { Suspense } from "react";
+import AddJobsPage from "../pages/RecruiterPages/AddJobsPage/AddJobsPage";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +28,14 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:3000/jobs/details/${params.id}`),
         element: <JobDetailsPage />,
+      },
+      {
+        path: "add-jobs",
+        element: (
+          <PrivateRoute>
+            <AddJobsPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "application/apply/:id",
