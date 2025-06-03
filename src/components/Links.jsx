@@ -19,6 +19,9 @@ const Links = ({ handleLogOut }) => {
       <li>
         <NavLink to="/add-jobs">Add Jobs</NavLink>
       </li>
+      <li>
+        <NavLink to="/my-jobs">My Posted Jobs</NavLink>
+      </li>
       {user ? (
         <li>
           <button onClick={handleLogOut} className="block lg:hidden text-left">
